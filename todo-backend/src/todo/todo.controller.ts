@@ -32,7 +32,7 @@ export class TodoController {
   findAllTodosByUserIdCompleted(@Param('userId') userId: number) {
     return this.todoService.findAllTodoByUserCompleted(Number(userId));
   }
-
+  //update ici c'est pour marker comme todo completed
   @Patch(':id')
   update(@Param('id') id: number) {
     return this.todoService.update(Number(id));

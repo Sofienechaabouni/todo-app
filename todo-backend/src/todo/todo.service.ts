@@ -1,15 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTodoDto } from './dto/create-todo.dto';
-import { UpdateTodoDto } from './dto/update-todo.dto';
 import { TodoRepository } from './repo/todo.repository';
 import { Todo } from './entities/todo.entity';
 import { UserService } from 'src/user/user.service';
-
-// ADD TODO BASED ON USER ID
-// FIND ALL TODOS BASED ON USER ID (NOT COMPLETED)
-// FIND ALL COMPLETED TODOS BASED ON USER ID (COMPLETED)
-// MARK TODO AS COMPLETED BASED ON TODO ID
-// DELETE TODO  BASED ON TODO ID
 
 @Injectable()
 export class TodoService {
@@ -19,7 +12,7 @@ export class TodoService {
   ) {}
 
   async create(createTodoDto: CreateTodoDto, userId: number) {
-    let todo: Todo = new Todo();
+    let todo: Todo = new Todo(); //TodoEntity
     todo.title = createTodoDto.title;
     todo.date = new Date().toLocaleString();
     todo.completed = false;

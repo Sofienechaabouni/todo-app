@@ -14,12 +14,14 @@ export class UserService {
     user.firstName = createUserDto.firstName;
     user.lastName = createUserDto.lastName;
     user.password = createUserDto.password;
+    //on modifie le role d'admin manuellement
+
     user.role = Constants.ROLES.NORMAL_ROLE;
     return this.userRepository.save(user);
   }
 
   findUserById(id: number) {
-    return this.userRepository.findOneOrFail({ where: { id: id } });
+    return this.userRepository.findOneOrFail({ where: { id: id } });//EntityNotFoundError en cas d'erreur 
   }
 
   findAll() {

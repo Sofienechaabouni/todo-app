@@ -3,3 +3,8 @@ import { Todo } from '../entities/todo.entity';
 
 @EntityRepository(Todo)
 export class TodoRepository extends Repository<Todo> {}
+/*
+au lieu de faire a chaque fois :
+@InjectRepository(Todo)
+    private userRepository:Repository<Todo>,
+*/

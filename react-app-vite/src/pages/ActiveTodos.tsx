@@ -60,8 +60,24 @@ function ActiveTodos() {
   return (
     <div>
       <NavBar></NavBar>
-      <div className="container mb-2 flex mx-auto w-full items-center justify-center">
-        <ul className="flex flex-col p-4">
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+          margin: "0 auto",
+          marginBottom: "1rem",
+          maxWidth: "1140px",
+        }}
+      >
+        <ul
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            padding: "1rem",
+          }}
+        >
           <span className="text-black text-2xl ">Enter Todo : </span>
           <input ref={title} className="mt-2 p-2  rounded-xl "></input>
           <button
